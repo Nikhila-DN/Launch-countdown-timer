@@ -26,52 +26,21 @@ body{
     background-position: center;
     font-family: "Red Hat Text", sans-serif;
     text-transform: uppercase;
-    text-align: center;
-    font-size: 14px;
     font-weight: 700;
 }
 
-img{
-    max-width: 100%;
-}
-
 h1{
-    margin-top: 10%;
+    margin: 10% auto auto auto;
     color: var(--White);
     font-size: 1.5rem;
     letter-spacing: 6px;
+    text-align: center;
+    font-weight: 700;
 }
 
 main{
-    min-height: 70vh;
+    margin: auto;
 }
-
-/* Countdown Timer */
-.countdown{
-    width: 35%;
-    margin: 6% auto;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    text-align: center;
-}
-
-.countdown h3{
-    color: var(--Grayish-blue);
-    font-size: 14px;
-    letter-spacing: 2px;
-    margin-top: 10px;
-}
-
-.countdown p{
-    background-color: var(--Dark-desaturated-blue);
-    padding: 20px;
-    border-radius: 5px;
-    color: var(--Soft-red);
-    font-size: 46px;
-    box-shadow: 0 13px 0 0 var(--Very-dark-blueblack);
-}
-
 
 /* Socials */
 .social{
@@ -99,17 +68,139 @@ main{
     z-index: -1;
     bottom: 0;
     left: 0;
+    width:100%;
+    overflow: hidden;
 }
 
+
+/* Countdown Timer */
+.countdown{
+  margin: 6% auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  width: 70%;
+}
+
+
+.flip-card {
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  box-shadow: 0 13px 0 0 black;
+  position: relative;
+}
+
+.top-flip,
+.bottom-flip {
+  position: absolute;
+}
+
+.top-flip {
+  transform-origin: bottom;
+  transform: rotateX(0deg);
+  animation: flip-top 0.5s ease-in forwards;
+}
+
+.bottom-flip {
+  bottom: 0;
+  animation: flip-bottom 0.5s ease-out 0.5s;
+  transform-origin: top;
+  transform: rotateX(90deg);
+}
+
+.top,
+.bottom,
+.top-flip,
+.bottom-flip {
+  height: 33px;
+  width: 80px;
+  padding: 21px 16px;
+  color: var(--Soft-red);
+  overflow: hidden;
+  text-align: center;
+}
+
+.top,
+.top-flip {
+  border-radius: 5px 5px 7px 7px;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.7);
+  background-color: rgb(48, 50, 78);
+}
+
+.bottom,
+.bottom-flip {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  border-radius:7px 7px 5px 5px;
+  background-color: var(--Dark-desaturated-blue);
+  box-shadow: 0 2px rgb(71, 83, 115, 0.2) inset;
+}
+
+p {
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--Grayish-blue);
+  margin-top: 40px;
+}
+
+.title {
+  margin-top: 1.2rem;
+  font-size: 0.8rem;
+}
+
+@keyframes flip-top {
+  to {
+    transform: rotateX(90deg);
+  }
+}
+
+@keyframes flip-bottom {
+  to {
+    transform: rotateX(0deg);
+  }
+}
+
+@media (min-width: 720px) {
+  .flip-card {
+    font-size: 5rem;
+  }
+
+  .countdown {
+    gap: 35px;
+    width: fit-content;
+  }
+
+  .top,
+  .bottom,
+  .top-flip,
+  .bottom-flip {
+    height: 80px;
+    width: 150px;
+    padding: 27px 16px;
+  }
+  .hills-img{
+    height: 30vh;
+}
+}
 @media(max-width:720px){
-    .countdown{
-        width: 90%;
-    }
-    .countdown p{
-        font-size: 1.5rem;
-    }
-    .hills-img{
-        height: 30vh;
-    }
-}
+  .countdown{
+      width: 90%;
+      margin: 10% auto;
+  }
 
+  .flip-card{
+    box-shadow: 0 7px 0 0 black;
+  }
+
+  main{
+    margin-top: 30%;
+  }
+
+  .hills-img{
+      height: 30vh;
+  }
+}

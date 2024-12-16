@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
+
+:root{
+     /* Primary */
+    --Grayish-blue: hsl(237, 18%, 59%);
+    --Soft-red: hsl(345, 95%, 68%);
+
+     /* Neutral */
+    --White: hsl(0, 0%, 100%);
+    --Dark-desaturated-blue: hsl(236, 21%, 26%);
+    --Very-dark-blue: hsl(235, 16%, 14%);
+    --Very-dark-blueblack: hsl(234, 17%, 12%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: auto;
+    background-color: var(--Very-dark-blue);
+    background-image: url('./images/bg-stars.svg');
+    background-repeat: repeat;
+    background-position: center;
+    font-family: "Red Hat Text", sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+img{
+    max-width: 100%;
+}
+
+h1{
+    margin-top: 10%;
+    color: var(--White);
+    font-size: 1.5rem;
+    letter-spacing: 6px;
+}
+
+main{
+    min-height: 70vh;
+}
+
+/* Countdown Timer */
+.countdown{
+    width: 35%;
+    margin: 6% auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.countdown h3{
+    color: var(--Grayish-blue);
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-top: 10px;
+}
+
+.countdown p{
+    background-color: var(--Dark-desaturated-blue);
+    padding: 20px;
+    border-radius: 5px;
+    color: var(--Soft-red);
+    font-size: 46px;
+    box-shadow: 0 13px 0 0 var(--Very-dark-blueblack);
+}
+
+
+/* Socials */
+.social{
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    right: 50%;
+    z-index: 9;
+    cursor:pointer;
+}
+.social ul{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+    margin: auto;
+}
+
+.social svg path:hover{
+    fill: var(--Soft-red);
+}
+
+.hills-img{
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+}
+
+@media(max-width:720px){
+    .countdown{
+        width: 90%;
+    }
+    .countdown p{
+        font-size: 1.5rem;
+    }
+    .hills-img{
+        height: 30vh;
+    }
+}
+
